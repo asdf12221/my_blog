@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <title>System.Initialize Preview</title>
+  <style>
+    .enter-hidden-y {
+      transform: translateY(40px);
+      opacity: 0;
+    }
+    .enter-hidden-x {
+      transform: translateX(-40px);
+      opacity: 0;
+    }
+    .enter-show {
+      transform: translate(0, 0);
+      opacity: 1;
+    }
+  </style>
+</head>
+<body class="min-h-screen overflow-x-hidden bg-[#050505] font-sans antialiased text-[#a1a1a1] selection:bg-blue-500/30">
+  <div
+    id="spotlight"
+    class="pointer-events-none fixed inset-0 z-0 transition-opacity duration-1000"
+    style="background: radial-gradient(circle 400px at 50% 50%, rgba(29, 78, 216, 0.07), transparent 80%);"
+  ></div>
+  <div class="pointer-events-none fixed inset-0 z-0 opacity-20" style="background-image: linear-gradient(to right, rgba(255,255,255,0.04) 1px, transparent 1px), linear-gradient(to bottom, rgba(255,255,255,0.04) 1px, transparent 1px); background-size: 40px 40px;"></div>
+
+  <nav class="fixed top-0 z-50 w-full border-b border-white/5 bg-black/50 backdrop-blur-md">
+    <div class="mx-auto flex h-14 max-w-6xl items-center justify-between px-6">
+      <div class="flex items-center gap-3">
+        <div class="h-2 w-2 animate-pulse rounded-full bg-blue-500"></div>
+        <span class="text-[10px] font-black uppercase tracking-[0.3em] text-white">System.Initialize...</span>
+      </div>
+      <div class="flex gap-8 text-[10px] font-bold uppercase tracking-widest">
+        <a class="group relative cursor-pointer transition-all hover:text-blue-400">Lab<span class="absolute -bottom-1 left-0 h-px w-0 bg-blue-500 transition-all duration-300 group-hover:w-full"></span></a>
+        <a class="group relative cursor-pointer transition-all hover:text-blue-400">Projects<span class="absolute -bottom-1 left-0 h-px w-0 bg-blue-500 transition-all duration-300 group-hover:w-full"></span></a>
+        <a class="group relative cursor-pointer transition-all hover:text-blue-400">Status<span class="absolute -bottom-1 left-0 h-px w-0 bg-blue-500 transition-all duration-300 group-hover:w-full"></span></a>
+      </div>
+    </div>
+  </nav>
+
+  <main class="relative z-10 mx-auto max-w-6xl px-6 pb-20 pt-32">
+    <div class="grid grid-cols-1 gap-16 lg:grid-cols-12">
+      <aside id="left-panel" class="enter-hidden-x space-y-12 transition-all duration-1000 lg:col-span-4">
+        <section>
+          <div class="mb-4 inline-block rounded border border-blue-500/30 px-2 py-1">
+            <span class="font-mono text-[9px] uppercase tracking-tighter text-blue-400">ID: HITWH_RES_2026</span>
+          </div>
+          <h1 class="mb-4 text-3xl font-light tracking-tighter text-white">
+            User: <span class="font-bold underline decoration-blue-500/50">Student</span>
+          </h1>
+          <p class="text-sm font-medium leading-relaxed text-neutral-500">
+            正在构建基于强化学习的自适应系统。<br />
+            主要研究方向：Embodied AI 与 算法交易。
+          </p>
+        </section>
+
+        <div class="space-y-2 border-t border-white/5 pt-8">
+          <div class="group flex items-center justify-between rounded border border-transparent p-3 transition-colors hover:border-white/5 hover:bg-white/[0.02]">
+            <div class="flex items-center gap-3 font-mono text-[11px] text-neutral-600 group-hover:text-neutral-400">
+              <i data-lucide="cpu" class="h-3 w-3"></i>
+              Neural Engine
+            </div>
+            <span class="font-mono text-[11px] font-bold text-neutral-400">Active</span>
+          </div>
+          <div class="group flex items-center justify-between rounded border border-transparent p-3 transition-colors hover:border-white/5 hover:bg-white/[0.02]">
+            <div class="flex items-center gap-3 font-mono text-[11px] text-neutral-600 group-hover:text-neutral-400">
+              <i data-lucide="activity" class="h-3 w-3"></i>
+              Train Loss
+            </div>
+            <span class="font-mono text-[11px] font-bold text-neutral-400">0.0042</span>
+          </div>
+          <div class="group flex items-center justify-between rounded border border-transparent p-3 transition-colors hover:border-white/5 hover:bg-white/[0.02]">
+            <div class="flex items-center gap-3 font-mono text-[11px] text-neutral-600 group-hover:text-neutral-400">
+              <i data-lucide="line-chart" class="h-3 w-3"></i>
+              Uptime
+            </div>
+            <span class="font-mono text-[11px] font-bold text-neutral-400">128:43:02</span>
+          </div>
+        </div>
+      </aside>
+
+      <div id="post-list" class="space-y-20 lg:col-span-8"></div>
+    </div>
+  </main>
+
+  <footer class="mx-auto mt-20 max-w-6xl border-t border-white/5 px-6 py-12">
+    <div class="flex flex-col items-start justify-between gap-6 md:flex-row md:items-center">
+      <div class="space-y-1 font-mono text-[9px] uppercase text-neutral-700">
+        <p>&gt; Connection established: 127.0.0.1</p>
+        <p>&gt; Location: Weihai, China</p>
+        <p>&gt; Status: All systems nominal.</p>
+      </div>
+      <div class="flex gap-8 text-[10px] font-bold text-neutral-600">
+        <span class="cursor-pointer transition-colors hover:text-white">Github_Repository</span>
+        <span class="cursor-pointer transition-colors hover:text-white">RSS_Feed</span>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const spotlight = document.getElementById("spotlight");
+    const leftPanel = document.getElementById("left-panel");
+    const postList = document.getElementById("post-list");
+    const posts = [
+      {
+        id: 1,
+        category: "Reinforcement Learning",
+        date: "2026.05.12",
+        title: "深度强化学习：从 DDPG 到 SAC 的工程化选型",
+        excerpt: "分析连续动作空间下的算法稳定性，探讨重现论文结果时的超参数调优策略。",
+      },
+      {
+        id: 2,
+        category: "Quant Trading",
+        date: "2026.04.28",
+        title: "时间序列预测中的 Transformer 变体对比",
+        excerpt: "对比 Informer, Autoformer 与 PatchTST 在高频交易数据上的实际表现。",
+      },
+    ];
+
+    postList.innerHTML = posts
+      .map(
+        (post, idx) => `
+        <article class="group relative enter-hidden-y transition-all duration-1000" style="transition-delay: ${idx * 200}ms;">
+          <div class="flex flex-col space-y-4">
+            <div class="flex items-center gap-3 font-mono text-[10px]">
+              <span class="font-bold tracking-tighter text-blue-500">[${post.category}]</span>
+              <span class="text-neutral-700">/</span>
+              <span class="text-neutral-500">${post.date}</span>
+            </div>
+
+            <div class="relative inline-block">
+              <h2 class="text-2xl font-bold text-neutral-200 transition-colors group-hover:text-white md:text-4xl">
+                ${post.title}
+              </h2>
+              <span class="absolute -bottom-2 left-0 h-1 w-0 bg-blue-600/20 transition-all duration-500 group-hover:w-full"></span>
+            </div>
+
+            <p class="max-w-2xl text-base leading-relaxed text-neutral-500 transition-colors group-hover:text-neutral-400">
+              ${post.excerpt}
+            </p>
+
+            <div class="pt-4">
+              <button class="flex items-center gap-2 text-[10px] font-black uppercase tracking-[0.2em] text-neutral-500 transition-all group-hover:text-blue-400">
+                Execute Read
+                <i data-lucide="arrow-up-right" class="h-3.5 w-3.5 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5"></i>
+              </button>
+            </div>
+          </div>
+        </article>
+      `
+      )
+      .join("");
+
+    const articleNodes = postList.querySelectorAll("article");
+    requestAnimationFrame(() => {
+      leftPanel.classList.add("enter-show");
+      articleNodes.forEach((node) => node.classList.add("enter-show"));
+    });
+
+    window.addEventListener(
+      "mousemove",
+      (e) => {
+        spotlight.style.background = `radial-gradient(circle 400px at ${e.clientX}px ${e.clientY}px, rgba(29, 78, 216, 0.07), transparent 80%)`;
+      },
+      { passive: true }
+    );
+
+    lucide.createIcons();
+  </script>
+</body>
+</html>

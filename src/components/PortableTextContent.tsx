@@ -7,19 +7,19 @@ type Props = {
 
 export function PortableTextContent({ value }: Props) {
   return (
-    <div className="prose prose-zinc max-w-none dark:prose-invert">
+    <div className="prose prose-invert max-w-none">
       <PortableText
         value={value}
         components={{
           block: {
             normal: ({ children }) => (
-              <p className="mb-5 leading-8 text-zinc-700 dark:text-zinc-200">{children}</p>
+              <p className="mb-5 leading-8 text-slate-300">{children}</p>
             ),
             h2: ({ children }) => (
-              <h2 className="mb-3 mt-8 text-2xl font-semibold tracking-tight">{children}</h2>
+              <h2 className="mb-3 mt-8 text-2xl font-semibold tracking-tight text-slate-100">{children}</h2>
             ),
             h3: ({ children }) => (
-              <h3 className="mb-2 mt-6 text-xl font-semibold tracking-tight">{children}</h3>
+              <h3 className="mb-2 mt-6 text-xl font-semibold tracking-tight text-slate-100">{children}</h3>
             ),
           },
           marks: {

@@ -17,18 +17,18 @@ export const metadata: Metadata = {
     process.env.NEXT_PUBLIC_SITE_URL ?? "https://your-blog.vercel.app"
   ),
   title: {
-    default: "Lenovo 的个人博客",
-    template: "%s | Lenovo 的个人博客",
+    default: "Jingyue Xu 的个人博客",
+    template: "%s | Jingyue Xu 的个人博客",
   },
   description: "记录技术、生活和创作的个人博客。",
   openGraph: {
-    title: "Lenovo 的个人博客",
+    title: "Jingyue Xu 的个人博客",
     description: "记录技术、生活和创作的个人博客。",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Lenovo 的个人博客",
+    title: "Jingyue Xu 的个人博客",
     description: "记录技术、生活和创作的个人博客。",
   },
 };
@@ -43,7 +43,7 @@ export default function RootLayout({
       lang="en"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col">{children}</body>
+      <body className="min-h-full">{children}</body>
     </html>
   );
 }
