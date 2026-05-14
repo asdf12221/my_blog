@@ -25,10 +25,10 @@ export function HomeCyber({ posts }: HomeCyberProps) {
     <div className="min-h-screen bg-[#050505] font-mono text-slate-200 selection:bg-blue-500/30">
       <CyberNav />
 
-      <main className="mx-auto grid max-w-6xl grid-cols-1 gap-12 px-6 pb-20 pt-32 lg:grid-cols-12">
+      <main className="mx-auto flex max-w-6xl flex-col gap-12 px-6 pb-20 pt-32">
         <CyberSidebar />
 
-        <div className="space-y-16 lg:col-span-9">
+        <div className="space-y-16">
           {posts.map((post) => (
             <section key={post.slug} className="group relative">
               <div className="absolute -left-6 top-0 h-full w-px bg-gradient-to-b from-blue-600/50 to-transparent transition-all group-hover:from-blue-400"></div>

@@ -2,7 +2,7 @@ import { Link2 } from "lucide-react";
 
 export function CyberSidebar() {
   return (
-    <aside className="space-y-8 lg:col-span-3">
+    <aside className="space-y-8">
       <div className="rounded-2xl border border-white/10 bg-gradient-to-b from-white/5 to-transparent p-6">
         <div className="mb-4 h-16 w-16 animate-pulse rounded-full border border-blue-500/50 bg-blue-500/20"></div>
         <h2 className="text-xl font-bold">Jingyue Xu</h2>
